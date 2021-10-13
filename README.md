@@ -16,6 +16,14 @@
 
 ## 运行
 
+编写 config.json 配置文件，模板如下：
+```
+{
+    "TOKEN": "Your token from bot father",
+    "PROXY": "(optional) your http proxy"
+}
+```
+
 ```
 python3 main.py
 ```

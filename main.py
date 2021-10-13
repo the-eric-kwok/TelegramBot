@@ -212,8 +212,13 @@ def load_config():
     global TOKEN, PROXY
     with open(CONFIGFILE, 'r') as f:
         config = json.load(f)
-    TOKEN = config["TOKEN"]
-    PROXY = config["PROXY"]
+    if "TOKEN" in config:
+        TOKEN = config["TOKEN"]
+    else:
+        logger.error("You must set token first!")
+        exit(1)
+    if "PROXY" in config:
+        PROXY = config["PROXY"]
 
 
 def load():
